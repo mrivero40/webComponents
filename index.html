@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test webComponent</title>
+    <style>
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 80vh;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1> webComponent nativas HTML-CSS-JavaScript</h1>
+
+    <section>
+
+        <web-component 
+            img="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/DGYMPJOSHFBXXCROW4DB5KH5IE.jpg"
+            title="El universo de James Webb"
+            parrafo="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur iure earum, quasi impedit eligendi excepturi tenetur veniam"
+        ></web-component>
+
+        <web-component 
+            img="https://cnnespanol.cnn.com/wp-content/uploads/2022/10/221028102521-james-webb-space-telescope-pillars-of-creation.jpg?quality=100&strip=info"
+            title="El universo de James Webb 2"
+            parrafo="orem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur iure earum, quasi impedit eligendi excepturi tenetur veniam, voluptates neque doloribus"
+        ></web-component>
+
+        <web-component 
+            img="http://www.nasa.gov/sites/default/files/thumbnails/image/web_first_images_release_0.png"
+            title="El universo de James Webb 3"
+            parrafo="orem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur iure earum, quasi impedit eligendi"
+        ></web-component>
+
+        <web-component 
+            img="https://www.semana.com/resizer/-hihB101SawevUgDnZAkiL6HFac=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/J73ARXYGYRBELJVD6XEBPXMZUE.jpg"
+            title="El universo de James Webb 4"
+            parrafo="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur iure earum, quasi impedit eligendi excepturi tenetur veniam, voluptates neque doloribus perspiciatis temporibus corporis asperiores ducimus dicta"
+        ></web-component>
+
+    </section>
+    <script src="./webComponent.js"></script>
+</body>
+</html>
