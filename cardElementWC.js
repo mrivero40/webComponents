@@ -6,7 +6,7 @@ class WebComponent extends HTMLElement {
     };
 
     static get observedAttributes() {
-        return ["img", "title", "parrafo"];
+        return ["img", "title", "parrafo", "cardcolor", "titlecolor", "parrafocolor"];
     };
 
     attributeChangedCallback(nowValue, oldValue, newValue) {
@@ -39,27 +39,39 @@ class WebComponent extends HTMLElement {
                 * {
                     margin: 0;
                     padding: 0;
+                    box-sizing: border-box;
                 }
                 
                 :host {
+                    --background-card: #060607;
+                    --color-parrafo: #FFF;
+                    --color-title: grey;
+
                     display: inline-block;
                     width: 19rem;
-                    height: auto;
+                    height: 28rem;
                     border-radius: 0 0 2rem 0;
-                    background-color: #202020;
-                    color: #B3B3B3;                   
+                    background-color: var(--background-card);
+                    background-color: ${this.cardcolor};
+                    
+                    margin: 1rem;
+                    font-family: 'Roboto', sans-serif;       
                 }
                                 
-                div img {
+                :host div img {
                     width: 100%;
                 }
 
-                div h3 {
+                :host div h3 {
                     margin-block: 1rem;
                     margin-inline: 1rem;
+                    color: var(--color-title);
+                    color: ${this.titlecolor}
                 }
 
-                div p {
+                :host div p {
+                    color: var(--color-parrafo);
+                    color: ${this.parrafocolor};
                     margin-block-end: 1rem;
                     margin-inline: 1rem;
                 }
