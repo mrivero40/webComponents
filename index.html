@@ -16,11 +16,14 @@
             box-sizing: border-box;
         }
 
-        h1 {
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.2rem;;
-        }
+        main {
+            width: 100vw;
+            height: 100vh;
+            background-color: #e4e3e3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }        
 
         section {
             display: flex;
@@ -34,19 +37,33 @@
             border-radius: 2rem;
             padding-block: 1rem;
         }
+
+        section h1 {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1rem;;
+            margin-inline: 2rem;
+            margin-block: 0;
+        }
         
     </style>
 </head>
 <body>
+    <main>
     <header-nav
         logo="./icons/logoWebComponents.png"
         name="JS-HTML-CSS"
-        title="Web Components"
-        icono="./icons/icon-email.svg"
+        title="WEB COMPONENTS"
+        icono="./icons/icon-email.png"
         email="matiasrivero40@hotmail.com"
+        bordersradius="var(--borders-radius-bottom)"
+        titlecolor="#bbd941"
+        backimgcolor="black"
     ></header-nav>
 
     <section>
+
+        <h1>Bienvenidos, esta web fue construída en su totalidad utilizando Web Components nativos del navegador, APIs -> Template, HTMLElement, CustomElement, ShadowDOM. Algunos estilos e información son integrados por medio de los atributos de la etiqueta HTML personalizada.</h1>
 
         <!-- IMPORTANTE !!!
             Los atributos obligatorios son: img, title, parrafo.
@@ -86,8 +103,20 @@
             parrafocolor="#ebafb1"
         ></web-component>
 
-    </section>
-    <h1>Bienvenidos, esta web fue construída en su totalidad utilizando Web Components nativos del navegador, APIs -> Template, HTMLElement, CustomElement, ShadowDOM. La información es integrada a través de los atributos de la etiqueta HTML personalizada. Para más detalles podes visitar el repositorio de github.</h1>
+    </section>    
+
+    <header-nav
+        logo="./icons/developer.png"
+        name="mdn web doc"
+        title="<- Documentación | Repositorio GitHub ->"
+        icono="./icons/github.png"
+        email="@mrivero40"
+        bordersradius="var(--borders-radius-top)"
+        titlecolor="grey"
+        backimgcolor="#000"
+    ></header-nav>
+    </main>
+
     <script type="module" src="./app.js"></script>
 </body>
 </html>

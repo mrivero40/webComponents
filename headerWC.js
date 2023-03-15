@@ -9,7 +9,7 @@ class Header extends HTMLElement {
     };
 
     static get observedAttributes() {
-        return ["logo", "name", "title", "icono", "email"];
+        return ["logo", "name", "title", "icono", "email", "bordersradius", "titlecolor", "backimgcolor"];
     };
 
     attributeChangedCallback(nowValue, oldValue, newValue) {
@@ -32,7 +32,7 @@ class Header extends HTMLElement {
 
                 <h1>${this.title}</h1>
                 
-                <div>
+                <div class="div-right">
                     <img src=${this.icono} />
                     <span>${this.email}</span>
                 </div>
@@ -51,13 +51,15 @@ class Header extends HTMLElement {
                     padding: 0;
                 }
                 :host {
+                    --borders-radius-top: 2rem 2rem 0 0;
+                    --borders-radius-bottom: 0 0 2rem 2rem;
+
                     display: inline-block;
                     width: 100%;
                     height: 7rem;
                     background-color: #202020;
-                    border-radius: 0 0 1rem 1rem;
+                    border-radius: ${this.bordersradius};
                     font-family: 'Roboto', sans-serif;
-                    border-radius: 0 0 2rem 2rem;
                     color: #B3B3B3;  
                 }
 
@@ -71,6 +73,7 @@ class Header extends HTMLElement {
 
                 :host header h1 {
                     color: #D8EE22;
+                    color: ${this.titlecolor};
                 }
 
                 :host header div {
@@ -79,28 +82,31 @@ class Header extends HTMLElement {
                 }
 
                 :host header span {
-                    margin-inline: 1.5rem;
+                    margin-inline: 1rem;
                 }
 
                 :host header div figure {
                     display: flex;
-                    width: 3rem;
-                    height: 6rem;
-                    border-radius: 50%;
+                    width: 5rem;
+                    height: 4rem;
+                    border-radius: 1rem;
                     background-color: #B3B3B3;
                     justify-content: center;
                     align-items: center;
                 }
 
                 :host header div .img-logo {
-                    width: 4rem;
-                    height: 4rem;                    
+                    width: 3.5rem;
+                    height: 3.5rem;                    
                 }
                 
-                :host header div img {
+                :host header .div-right img {
+                    width: 3rem;
+                    height: 3rem;
                     background-color: #B3B3B3;
+                    background-color: ${this.backimgcolor};
                     border-radius: 1rem;
-                    padding: .25rem;
+                    padding: .3rem;
                 }
             </style>
         `;

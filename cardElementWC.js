@@ -74,6 +74,7 @@ class WebComponent extends HTMLElement {
                     color: ${this.parrafocolor};
                     margin-block-end: 1rem;
                     margin-inline: 1rem;
+                    font-size: 1rem;
                 }
 
             </styles>
