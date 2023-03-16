@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./icons/icon-james-webb.ico" type="image/x-icon">
     <title>Jammes Webb - webComponents</title>
     <style>
 
@@ -18,11 +19,13 @@
 
         main {
             width: 100vw;
-            height: 100vh;
-            background-color: #e4e3e3;
+            height: 100vh;            
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            background-image: url('https://static.independent.co.uk/2023/01/11/18/NGC%20346%20%28credit%20NASA%2C%20ESA%2C%20CSA%2C%20STScI%29.jpg?quality=75&width=1200&auto=webp');
+            background-repeat: no-repeat;
+            background-size: cover;
         }        
 
         section {
@@ -30,10 +33,9 @@
             flex-wrap: wrap;
             width: 100%;
             height: auto;
-            margin: 0 auto;
+            margin: 0 auto;           
             justify-content: space-evenly;
             align-items: flex-start;
-            background-color: #B3B3B3;
             border-radius: 2rem;
             padding-block: 1rem;
         }
@@ -50,71 +52,103 @@
 </head>
 <body>
     <main>
-    <header-nav
-        logo="./icons/logoWebComponents.png"
-        name="JS-HTML-CSS"
-        title="WEB COMPONENTS"
-        icono="./icons/icon-email.png"
-        email="matiasrivero40@hotmail.com"
-        bordersradius="var(--borders-radius-bottom)"
-        titlecolor="#bbd941"
-        backimgcolor="black"
-    ></header-nav>
 
-    <section>
+        <!--
+        Atributos obligatorios: logo, linkdocument, name, title, icono, email, link !!!!
+            logo = logo left
+            linkdocument = url de empresa o documentancion
+            name = nombre de empresa o documentacion
+            title = principal center
+            icono = icono right contacto
+            email = correo elect a mostrar o dato de contato
+            link = link a email usando ( mailto:correo@dominio.com ) o a otra página de contacto usando URL ( https://tuwebdecontacto.com ).
 
-        <h1>Bienvenidos, esta web fue construída en su totalidad utilizando Web Components nativos del navegador, APIs -> Template, HTMLElement, CustomElement, ShadowDOM. Algunos estilos e información son integrados por medio de los atributos de la etiqueta HTML personalizada.</h1>
+        Atributos opcionales: backgrouncolor, bordersradius, titlecolor, backiconcolor
+
+            backgroundcolor = color de fonde de la barra
+
+            bordersradius = puedes utilizar manualmente los bordes haciendo uso de los valores de border-radius de CSS o utilizando alguna de las variables predefinidas ( var(--variable-elegida) ):
+
+                --borders-radius-top ( bordes redondeados 3rem arriba ambos )
+                --border-radius-bottom ( bordes redondeados 3rem abajo ambos )
+
+            titlecolor = color del título principal
+            backimgcolor = color de fondo de los íconos right barra (usar imágenes fondo transparente)
+
+        *Los atributos opciones pueden omitirse y se establecen estilos por defecto.
+        -->
+
+        <nav-bar
+            logo="./icons/logoWebComponents.png"
+            linkdocument="https://webcomponents.org"
+            name="webcomponents.org"
+            title="Telescopio JAMES WEBB"
+            icono="./icons/icon-email.png"
+            email="matiasrivero40@hotmail.com"
+            link="mailto:matiasrivero40@hotmail.com"
+            bordersradius="var(--borders-radius-bottom)"
+            titlecolor="#bbd941"
+            backiconcolor="black"
+        ></nav-bar>
+
+        <section>
+
+        <!--<h1>Bienvenidos, esta web fue construída en su totalidad utilizando Web Components nativos del navegador, APIs -> Template, HTMLElement, CustomElement, ShadowDOM. Algunos estilos e información son integrados por medio de los atributos de la etiqueta HTML personalizada.</h1>-->
 
         <!-- IMPORTANTE !!!
             Los atributos obligatorios son: img, title, parrafo.
             Los atributos opcionales son: cardcolor, titlecolor, parrafocolor. Pueden omitirse estos atributos y se cargarán colores por defecto del componente ej. card 1 -->
-        
-        <web-component 
-            img="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/DGYMPJOSHFBXXCROW4DB5KH5IE.jpg"
-            title="Nebulosa de la Tarántula"
-            parrafo="La región de formación estelar de la Nebulosa de la Tarántula, de 340 años luz de diámetro, capturada por el telescopio espacial James Webb Near -Cámara infrarroja. (NASA, ESA, CSA, STScI, equipo de producción de Webb ERO vía The New York Times). Esto podría ser un modelo de lo que le ocurrió a nuestro Sol cuando se formó, afirma Reiter en una entrevista."
-        ></web-component>
+            
+            <web-component 
+                img="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/DGYMPJOSHFBXXCROW4DB5KH5IE.jpg"
+                title="Nebulosa de la Tarántula"
+                parrafo="La región de formación estelar de la Nebulosa de la Tarántula, de 340 años luz de diámetro, capturada por el telescopio espacial James Webb Near -Cámara infrarroja. (NASA, ESA, CSA, STScI, equipo de producción de Webb ERO vía The New York Times). Esto podría ser un modelo de lo que le ocurrió a nuestro Sol cuando se formó, afirma Reiter en una entrevista."
+            ></web-component>
 
-        <web-component 
-            img="https://cnnespanol.cnn.com/wp-content/uploads/2022/10/221028102521-james-webb-space-telescope-pillars-of-creation.jpg?quality=100&strip=info"
-            title="Pilares de la Creación"
-            parrafo="Los Pilares de la Creación, que muestra la capacidad del telescopio para detectar polvo, un ingrediente importante en la formación de estrellas. (NASA, ESA, CSA, STScI vía The New York Times). Con un espejo primario de 6 metros de ancho, el Webb es siete veces más potente que su predecesor, el telescopio espacial Hubble."
-            cardcolor="#1e3035"
-            titlecolor="#f67f00"
-            parrafocolor="#f0d7bf"
-        ></web-component>
+            <web-component 
+                img="https://cnnespanol.cnn.com/wp-content/uploads/2022/10/221028102521-james-webb-space-telescope-pillars-of-creation.jpg?quality=100&strip=info"
+                title="Pilares de la Creación"
+                parrafo="Los Pilares de la Creación, que muestra la capacidad del telescopio para detectar polvo, un ingrediente importante en la formación de estrellas. (NASA, ESA, CSA, STScI vía The New York Times). Con un espejo primario de 6 metros de ancho, el Webb es siete veces más potente que su predecesor, el telescopio espacial Hubble."
+                cardcolor="#1e3035"
+                titlecolor="#f67f00"
+                parrafocolor="#f0d7bf"
+            ></web-component>
 
-        <web-component 
-            img="http://www.nasa.gov/sites/default/files/thumbnails/image/web_first_images_release_0.png"
-            title=" Nebulosa de la Quilla"
-            parrafo="En esta imagen difundida por la NASA el 12 de julio de 2022, se ve el extremo de una región joven y de formación de estrellas en NGC 3324, en la Nebulosa de la Quilla. (NASA, ESA, CSA, and STScI
-            (Associated Press). “Realmente hemos cambiado el entendimiento de nuestro universo”, dijo el director general de la Agencia Espacial Europea, Josef Aschbacher."
-            cardcolor="#1f1113"
-            titlecolor="#3d8cc2"
-            parrafocolor="#8da9c6"
-        ></web-component>
+            <web-component 
+                img="http://www.nasa.gov/sites/default/files/thumbnails/image/web_first_images_release_0.png"
+                title=" Nebulosa de la Quilla"
+                parrafo="En esta imagen difundida por la NASA el 12 de julio de 2022, se ve el extremo de una región joven y de formación de estrellas en NGC 3324, en la Nebulosa de la Quilla. (NASA, ESA, CSA, and STScI
+                (Associated Press). “Realmente hemos cambiado el entendimiento de nuestro universo”, dijo el director general de la Agencia Espacial Europea, Josef Aschbacher."
+                cardcolor="#1f1113"
+                titlecolor="#3d8cc2"
+                parrafocolor="#8da9c6"
+            ></web-component>
 
-        <web-component 
-            img="https://www.semana.com/resizer/-hihB101SawevUgDnZAkiL6HFac=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/J73ARXYGYRBELJVD6XEBPXMZUE.jpg"
-            title="Telescopio James Webb"
-            parrafo="El telescopio espacial James Webb es un observatorio espacial desarrollado a través de la colaboración de 14 países​, construido y operado conjuntamente por la Agencia Espacial Europea, la Agencia Espacial Canadiense y la NASA para sustituir los telescopios Hubble y Spitzer. Wikipedia."
-            cardcolor="#08101d"
-            titlecolor="#b8699a"
-            parrafocolor="#ebafb1"
-        ></web-component>
+            <web-component 
+                img="https://www.semana.com/resizer/-hihB101SawevUgDnZAkiL6HFac=/1280x720/smart/filters:format(jpg):quality(80)/cloudfront-us-east-1.images.arcpublishing.com/semana/J73ARXYGYRBELJVD6XEBPXMZUE.jpg"
+                title="Telescopio James Webb"
+                parrafo="El telescopio espacial James Webb es un observatorio espacial desarrollado a través de la colaboración de 14 países​, construido y operado conjuntamente por la Agencia Espacial Europea, la Agencia Espacial Canadiense y la NASA para sustituir los telescopios Hubble y Spitzer. Wikipedia."
+                cardcolor="#08101d"
+                titlecolor="#b8699a"
+                parrafocolor="#ebafb1"
+            ></web-component>
 
-    </section>    
+        </section>    
 
-    <header-nav
-        logo="./icons/developer.png"
-        name="mdn web doc"
-        title="<- Documentación | Repositorio GitHub ->"
-        icono="./icons/github.png"
-        email="@mrivero40"
-        bordersradius="var(--borders-radius-top)"
-        titlecolor="grey"
-        backimgcolor="#000"
-    ></header-nav>
+        <nav-bar
+            backgroundcolor="#2c0534"
+            logo="./icons/developer.png"
+            linkdocument="https://developer.mozilla.org/es/docs/Web/Web_Components"
+            name="mdn web doc"
+            title="<- Documentación | Repositorio GitHub ->"
+            icono="./icons/github.png"
+            email="@mrivero40"
+            link="https://github.com/mrivero40/webComponents"
+            bordersradius="var(--borders-radius-top)"
+            titlecolor="lightgrey"
+            backiconcolor="#000"
+        ></nav-bar>
+
     </main>
 
     <script type="module" src="./app.js"></script>

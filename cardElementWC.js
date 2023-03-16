@@ -2,7 +2,7 @@ class WebComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow( { mode: "open" } );
-        console.log('desde el contructor');
+        console.log('Hola desde el constructor, te invito a explorar el código en el repositorio de github');
     };
 
     static get observedAttributes() {
@@ -50,6 +50,7 @@ class WebComponent extends HTMLElement {
                     display: inline-block;
                     width: 19rem;
                     height: 28rem;
+                    border: .15rem solid lightgrey;
                     border-radius: 0 0 2rem 0;
                     background-color: var(--background-card);
                     background-color: ${this.cardcolor};
@@ -83,7 +84,7 @@ class WebComponent extends HTMLElement {
 
     connectedCallback() {
         this.render();
-        console.log('desde el connectedCallback');
+        console.log('desde el connectedCallback, te cuento que la información y algunos estilos son establecidos a través de los atributs de la etiqueta customizada de HTML');
     };
 
     render() {

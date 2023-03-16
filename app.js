@@ -1,2 +1,2 @@
 import './cardElementWC.js';
-import './headerWC.js';
+import './navbar.js';

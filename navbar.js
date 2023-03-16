@@ -1,4 +1,4 @@
-class Header extends HTMLElement {
+class navbar extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({ mode: 'open' });
@@ -9,7 +9,7 @@ class Header extends HTMLElement {
     };
 
     static get observedAttributes() {
-        return ["logo", "name", "title", "icono", "email", "bordersradius", "titlecolor", "backimgcolor"];
+        return ["backgroundcolor","logo", "linkdocument", "name", "title", "icono", "email", "link", "bordersradius", "titlecolor", "backiconcolor"];
     };
 
     attributeChangedCallback(nowValue, oldValue, newValue) {
@@ -24,16 +24,20 @@ class Header extends HTMLElement {
             <header>
 
                 <div>
-                    <figure>
-                        <img class="img-logo" src=${this.logo} />
-                    </figure>
+                    <a href="${this.linkdocument}" target="_blank">
+                        <figure>
+                            <img class="img-logo" src=${this.logo} />
+                        </figure>
+                    </a>
                     <span>${this.name}</span>
                 </div>
 
                 <h1>${this.title}</h1>
                 
                 <div class="div-right">
-                    <img src=${this.icono} />
+                    <a href="${this.link}" target="_blank">
+                        <img src=${this.icono} />
+                    </a>
                     <span>${this.email}</span>
                 </div>
 
@@ -51,13 +55,14 @@ class Header extends HTMLElement {
                     padding: 0;
                 }
                 :host {
-                    --borders-radius-top: 2rem 2rem 0 0;
-                    --borders-radius-bottom: 0 0 2rem 2rem;
+                    --borders-radius-top: 3rem 3rem 0 0;
+                    --borders-radius-bottom: 0 0 3rem 3rem;
 
                     display: inline-block;
                     width: 100%;
-                    height: 7rem;
+                    height: 6rem;
                     background-color: #202020;
+                    background-color: ${this.backgroundcolor};
                     border-radius: ${this.bordersradius};
                     font-family: 'Roboto', sans-serif;
                     color: #B3B3B3;  
@@ -100,11 +105,11 @@ class Header extends HTMLElement {
                     height: 3.5rem;                    
                 }
                 
-                :host header .div-right img {
+                :host header .div-right a img {
                     width: 3rem;
                     height: 3rem;
                     background-color: #B3B3B3;
-                    background-color: ${this.backimgcolor};
+                    background-color: ${this.backiconcolor};
                     border-radius: 1rem;
                     padding: .3rem;
                 }
@@ -117,4 +122,4 @@ class Header extends HTMLElement {
     };
 };
 
-customElements.define("header-nav", Header);
+customElements.define("nav-bar", navbar);
