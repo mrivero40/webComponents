@@ -50,7 +50,7 @@ class WebComponent extends HTMLElement {
                     display: inline-block;
                     width: 19rem;
                     height: 28rem;
-                    border: .15rem solid lightgrey;
+                    border: .15rem solid #991cca;
                     border-radius: 0 0 2rem 0;
                     background-color: var(--background-card);
                     background-color: ${this.cardcolor};
@@ -76,6 +76,13 @@ class WebComponent extends HTMLElement {
                     margin-block-end: 1rem;
                     margin-inline: 1rem;
                     font-size: 1rem;
+                }
+
+                @media (max-width: 680px) {
+                    :host {
+                        width: 80%;
+                        height: auto;
+                    }
                 }
 
             </styles>

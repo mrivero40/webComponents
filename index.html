@@ -10,7 +10,6 @@
     <link rel="shortcut icon" href="./icons/icon-james-webb.ico" type="image/x-icon">
     <title>Jammes Webb - webComponents</title>
     <style>
-
         body {
             margin: 0;
             padding: 0;
@@ -24,7 +23,6 @@
             flex-direction: column;
             justify-content: space-between;
             background-image: url('https://static.independent.co.uk/2023/01/11/18/NGC%20346%20%28credit%20NASA%2C%20ESA%2C%20CSA%2C%20STScI%29.jpg?quality=75&width=1200&auto=webp');
-            background-repeat: no-repeat;
             background-size: cover;
         }        
 
@@ -47,6 +45,16 @@
             margin-inline: 2rem;
             margin-block: 0;
         }
+
+        @media(max-width: 1365px) {
+            main {
+                height: auto;
+                background-size: auto;
+            }
+            section {
+                height: auto;
+            }
+        }     
         
     </style>
 </head>
@@ -73,22 +81,25 @@
                 --border-radius-bottom ( bordes redondeados 3rem abajo ambos )
 
             titlecolor = color del título principal
-            backimgcolor = color de fondo de los íconos right barra (usar imágenes fondo transparente)
+            backiconcolor = color de fondo de los íconos right barra (usar imágenes fondo transparente)
+            backimgcolor = color de fondo de las imágenes left barra (usar imágenes fondo transparente), afecta también al texto <span> left y right
 
         *Los atributos opciones pueden omitirse y se establecen estilos por defecto.
         -->
 
         <nav-bar
+            backgroundcolor="#202020b8"
             logo="./icons/logoWebComponents.png"
             linkdocument="https://webcomponents.org"
             name="webcomponents.org"
-            title="Telescopio JAMES WEBB"
+            titleh1="Telescopio JAMES WEBB"
             icono="./icons/icon-email.png"
             email="matiasrivero40@hotmail.com"
             link="mailto:matiasrivero40@hotmail.com"
             bordersradius="var(--borders-radius-bottom)"
             titlecolor="#bbd941"
             backiconcolor="black"
+            backimgcolor="#7f8694"
         ></nav-bar>
 
         <section>
@@ -136,17 +147,18 @@
         </section>    
 
         <nav-bar
-            backgroundcolor="#2c0534"
+            backgroundcolor="#180f1ab5"
             logo="./icons/developer.png"
             linkdocument="https://developer.mozilla.org/es/docs/Web/Web_Components"
             name="mdn web doc"
-            title="<- Documentación | Repositorio GitHub ->"
+            titleh1="<- Info | GitHub ->"
             icono="./icons/github.png"
             email="@mrivero40"
             link="https://github.com/mrivero40/webComponents"
             bordersradius="var(--borders-radius-top)"
-            titlecolor="lightgrey"
+            titlecolor="#a57ab1"
             backiconcolor="#000"
+            backimgcolor="#a57ab1"
         ></nav-bar>
 
     </main>
