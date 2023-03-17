@@ -53,14 +53,20 @@ class WebComponent extends HTMLElement {
                     border: .15rem solid #991cca;
                     border-radius: 0 0 2rem 0;
                     background-color: var(--background-card);
-                    background-color: ${this.cardcolor};
-                    
+                    background-color: ${this.cardcolor};                    
                     margin: 1rem;
                     font-family: 'Roboto', sans-serif;       
+                }
+
+                :host div {
+                    width: 100%;
+                    height: 12rem;
                 }
                                 
                 :host div img {
                     width: 100%;
+                    height: 100%;
+                    object-fit: cover;
                 }
 
                 :host div h3 {
@@ -81,6 +87,10 @@ class WebComponent extends HTMLElement {
                 @media (max-width: 680px) {
                     :host {
                         width: 80%;
+                        height: auto;
+                    }
+
+                    :host div {
                         height: auto;
                     }
                 }
