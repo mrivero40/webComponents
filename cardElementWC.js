@@ -44,7 +44,7 @@ class WebComponent extends HTMLElement {
                 
                 :host {
                     --background-card: #060607;
-                    --color-parrafo: #FFF;
+                    --color-parrafo: lightgrey;
                     --color-title: grey;
 
                     display: inline-block;
